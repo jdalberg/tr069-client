@@ -1,0 +1,21 @@
+[package]
+name = "tr069-client"
+version = "0.1.0"
+authors = ["jda"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# can not publish cwmp to crates.io before xml-rs eats my pull request
+cwmp = { git = "https://github.com/jdalberg/cwmp", branch="master" }
+redis = "0.16.0"
+clap = "2.31"
+serde_yaml = "0.8.7"
+xml-rs = "0.8"
+serde = { version = "1.0", features = ["derive"] }
+derive_setters = "0.1"
+
+[[bin]]
+name = "primer"
+path = "src/primer/main.rs"
